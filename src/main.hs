@@ -8,7 +8,7 @@ import Data.Char
 fib :: Int -> Int
 fib 0 = 0
 fib 1 = 1
-fib 2 = 1 
+fib 2 = 1
 fib n = 2 * fib (n - 2) + fib (n - 3)
 --Do it any other way and the time limit will exceed!
 
@@ -50,13 +50,13 @@ medellangd s = antal_bokstaver s / antal_ord s
 
 --The shuffler
 
-varannan :: [x] -> [x]
-varannan [] = []
-varannan [x] = [x]
-varannan (x:xs) = x:varannan (tail xs)
+every_other :: [x] -> [x]
+every_other [] = []
+every_other [x] = [x]
+every_other (x:xs) = x:every_other (tail xs)
 
-skyffla :: [x] -> [x]
-skyffla [] = []
-skyffla list@(x:xs) = varannan list ++ skyffla (varannan xs)
+shuffle :: [x] -> [x]
+shuffle [] = []
+shuffle list@(x:xs) = every_other list ++ shuffle (every_other xs)
     
 
