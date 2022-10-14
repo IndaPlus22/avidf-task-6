@@ -57,6 +57,8 @@ every_other (x:xs) = x:every_other (tail xs)
 
 shuffle :: [x] -> [x]
 shuffle [] = []
-shuffle list@(x:xs) = every_other list ++ shuffle (every_other xs)
+shuffle xl@(x:xs) = every_other xl ++ shuffle (every_other xs)
+-- @ reads as "as"!
+-- the list xl as the lists head l to the lists tail 
     
 
